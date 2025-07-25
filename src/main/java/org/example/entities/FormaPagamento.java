@@ -7,99 +7,101 @@ public class FormaPagamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String descricao;
-
-    private String tipo;  // Ex: à vista, parcelado, crédito, débito, pix, boleto ou bens pessoais kskksks
-
-    private Integer numeroParcelas;
-
-    private Integer diasEntreParcelas;
-
-    private boolean permiteTroco;
-
-    private Double taxaPercentual;
-
-    private boolean ativo;
+    @Column(name = "FORM_ID")
+    private Long formid;
+    @Column(name = "FORM_DESCRICAO", length = 100, nullable = false)
+    private String formdescricao;
+    @Column(name = "FORM_TIPO", length = 50, nullable = false)
+    private String formtipo;  // Ex: à vista, parcelado, crédito, débito, pix, boleto ou bens pessoais kskksks
+    @Column(name = "FORM_NUMERO_PARCELAS")
+    private Integer formnumeroParcelas;
+    @Column(name = "FORM_DIAS_ENTRE_PARCELAS")
+    private Integer formdiasEntreParcelas;
+    @Column(name = "FORM_PERMITE_TROCO")
+    private boolean formpermiteTroco;
+    @Column(name = "FORM_TAXA_PERCENTUAL", precision = 5, scale = 2)
+    private Double formtaxaPercentual;
+    @Column(name = "FORM_ATIVO")
+    private boolean formativo;
 
     public FormaPagamento() {}
 
     public FormaPagamento(Long id, String descricao, String tipo, Integer numeroParcelas, Integer diasEntreParcelas,
                           boolean permiteTroco, Double taxaPercentual, boolean ativo) {
-        this.id = id;
-        this.descricao = descricao;
-        this.tipo = tipo;
-        this.numeroParcelas = numeroParcelas;
-        this.diasEntreParcelas = diasEntreParcelas;
-        this.permiteTroco = permiteTroco;
-        this.taxaPercentual = taxaPercentual;
-        this.ativo = ativo;
+        this.formid = id;
+        this.formdescricao = descricao;
+        this.formtipo = tipo;
+        this.formnumeroParcelas = numeroParcelas;
+        this.formdiasEntreParcelas = diasEntreParcelas;
+        this.formpermiteTroco = permiteTroco;
+        this.formtaxaPercentual = taxaPercentual;
+        this.formativo = ativo;
     }
 
     // Getters e setters
 
-    public Long getId() {
-        return id;
+
+    public Long getFormid() {
+        return formid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setFormid(Long formid) {
+        this.formid = formid;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getFormdescricao() {
+        return formdescricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setFormdescricao(String formdescricao) {
+        this.formdescricao = formdescricao;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getFormtipo() {
+        return formtipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setFormtipo(String formtipo) {
+        this.formtipo = formtipo;
     }
 
-    public Integer getNumeroParcelas() {
-        return numeroParcelas;
+    public Integer getFormnumeroParcelas() {
+        return formnumeroParcelas;
     }
 
-    public void setNumeroParcelas(Integer numeroParcelas) {
-        this.numeroParcelas = numeroParcelas;
+    public void setFormnumeroParcelas(Integer formnumeroParcelas) {
+        this.formnumeroParcelas = formnumeroParcelas;
     }
 
-    public Integer getDiasEntreParcelas() {
-        return diasEntreParcelas;
+    public Integer getFormdiasEntreParcelas() {
+        return formdiasEntreParcelas;
     }
 
-    public void setDiasEntreParcelas(Integer diasEntreParcelas) {
-        this.diasEntreParcelas = diasEntreParcelas;
+    public void setFormdiasEntreParcelas(Integer formdiasEntreParcelas) {
+        this.formdiasEntreParcelas = formdiasEntreParcelas;
     }
 
-    public boolean isPermiteTroco() {
-        return permiteTroco;
+    public boolean isFormpermiteTroco() {
+        return formpermiteTroco;
     }
 
-    public void setPermiteTroco(boolean permiteTroco) {
-        this.permiteTroco = permiteTroco;
+    public void setFormpermiteTroco(boolean formpermiteTroco) {
+        this.formpermiteTroco = formpermiteTroco;
     }
 
-    public Double getTaxaPercentual() {
-        return taxaPercentual;
+    public Double getFormtaxaPercentual() {
+        return formtaxaPercentual;
     }
 
-    public void setTaxaPercentual(Double taxaPercentual) {
-        this.taxaPercentual = taxaPercentual;
+    public void setFormtaxaPercentual(Double formtaxaPercentual) {
+        this.formtaxaPercentual = formtaxaPercentual;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isFormativo() {
+        return formativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setFormativo(boolean formativo) {
+        this.formativo = formativo;
     }
 }

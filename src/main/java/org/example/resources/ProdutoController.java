@@ -36,7 +36,7 @@ public class ProdutoController {
     public ResponseEntity<Produto> atualizar(@PathVariable Long id, @RequestBody Produto produto) {
         return produtoRepository.findById(id)
                 .map(produtoExistente -> {
-                    produto.setId(id);
+                    produto.setProid(id);
                     Produto atualizado = produtoRepository.save(produto);
                     return ResponseEntity.ok(atualizado);
                 })

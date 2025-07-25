@@ -36,7 +36,7 @@ public class FornecedorController {
     public ResponseEntity<Fornecedor> atualizar(@PathVariable Long id, @RequestBody Fornecedor fornecedor) {
         return fornecedorRepository.findById(id)
                 .map(fornecedorExistente -> {
-                    fornecedor.setId(id);
+                    fornecedor.setForneid(id);
                     Fornecedor atualizado = fornecedorRepository.save(fornecedor);
                     return ResponseEntity.ok(atualizado);
                 })

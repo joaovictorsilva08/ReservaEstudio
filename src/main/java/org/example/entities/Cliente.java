@@ -9,109 +9,111 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "CLI_ID")
+    private Long cliid;
+@Column(name = "CLI_NOME", length = 100, nullable = false )
+    private String clinome;
+    @Column(name = "CLI_CPF", length = 14, unique = true)
+    private String clicpf;
+    @Column(name = "CLI_RG", length = 20)
+    private String clirg;
+    @Column(name = "CLI_DATA_NASCIMENTO")
+    private LocalDate clidataNascimento;
 
-    private String nome;
+    @Column(name = "CLI_SEXO", length = 1)
+    private String clisexo;
+    @Column(name = "CLI_DATA_CADASTRO")
+    private LocalDate clidataCadastro;
 
-    private String cpf;
-
-    private String rg;
-
-    private LocalDate dataNascimento;
-
-
-    private String sexo;
-
-    private LocalDate dataCadastro;
-
-    private String observacoes;
-
-    private boolean ativo;
+    @Column(name = "CLI_OBSERVACOES", columnDefinition = "TEXT")
+    private String cliobservacoes;
+    @Column(name = "CLI_ATIVO")
+    private boolean cliativo;
 
     // Getters e setters
 
 
     public Cliente(Long id, String nome, String cpf, String rg, LocalDate dataNascimento, String sexo, LocalDate dataCadastro, String observacoes, boolean ativo) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.rg = rg;
-        this.dataNascimento = dataNascimento;
-        this.sexo = sexo;
-        this.dataCadastro = dataCadastro;
-        this.observacoes = observacoes;
-        this.ativo = ativo;
+        this.cliid = id;
+        this.clinome = nome;
+        this.clicpf = cpf;
+        this.clirg = rg;
+        this.clidataNascimento = dataNascimento;
+        this.clisexo = sexo;
+        this.clidataCadastro = dataCadastro;
+        this.cliobservacoes = observacoes;
+        this.cliativo = ativo;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCliid() {
+        return cliid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCliid(Long cliid) {
+        this.cliid = cliid;
     }
 
-    public String getNome() {
-        return nome;
+    public String getClinome() {
+        return clinome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setClinome(String clinome) {
+        this.clinome = clinome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getClicpf() {
+        return clicpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setClicpf(String clicpf) {
+        this.clicpf = clicpf;
     }
 
-    public String getRg() {
-        return rg;
+    public String getClirg() {
+        return clirg;
     }
 
-    public void setRg(String rg) {
-        this.rg = rg;
+    public void setClirg(String clirg) {
+        this.clirg = clirg;
     }
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
+    public LocalDate getClidataNascimento() {
+        return clidataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setClidataNascimento(LocalDate clidataNascimento) {
+        this.clidataNascimento = clidataNascimento;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getClisexo() {
+        return clisexo;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setClisexo(String clisexo) {
+        this.clisexo = clisexo;
     }
 
-    public LocalDate getDataCadastro() {
-        return dataCadastro;
+    public LocalDate getClidataCadastro() {
+        return clidataCadastro;
     }
 
-    public void setDataCadastro(LocalDate dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setClidataCadastro(LocalDate clidataCadastro) {
+        this.clidataCadastro = clidataCadastro;
     }
 
-    public String getObservacoes() {
-        return observacoes;
+    public String getCliobservacoes() {
+        return cliobservacoes;
     }
 
-    public void setObservacoes(String observacoes) {
-        this.observacoes = observacoes;
+    public void setCliobservacoes(String cliobservacoes) {
+        this.cliobservacoes = cliobservacoes;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isCliativo() {
+        return cliativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setCliativo(boolean cliativo) {
+        this.cliativo = cliativo;
     }
 }

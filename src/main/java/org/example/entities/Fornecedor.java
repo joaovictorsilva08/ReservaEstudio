@@ -8,25 +8,26 @@ public class Fornecedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String razaoSocial;
-
-    private String nomeFantasia;
-
-    private String cnpj;
-
-    private String inscricaoEstadual;
-
-    private String inscricaoMunicipal;
-
-    private String contatoResponsavel;
-
-    private LocalDate dataCadastro;
-
-    private String observacoes;
-
-    private boolean ativo;
+    @Column(name = "FORNE_ID")
+    private Long forneid;
+    @Column(name = "FORNE_RAZAO_SOCIAL", length = 150, nullable = false)
+    private String fornerazaoSocial;
+    @Column(name = "FORNE_NOME_FANTASIA", length = 100)
+    private String fornenomeFantasia;
+    @Column(name = "FORNE_CNPJ", length = 18, unique = true)
+    private String fornecnpj;
+    @Column(name = "FORNE_INSCRICAO_ESTADUAL", length = 30)
+    private String forneinscricaoEstadual;
+    @Column(name = "FORNE_INSCRICAO_MUNICIPAL", length = 30)
+    private String forneinscricaoMunicipal;
+    @Column(name = "FORNE_CONTATO_RESPONSAVEL", length = 100)
+    private String fornecontatoResponsavel;
+    @Column(name = "FORNE_DATA_CADASTRO")
+    private LocalDate fornedataCadastro;
+    @Column(name = "FORNE_OBSERVACOES", columnDefinition = "TEXT")
+    private String forneobservacoes;
+    @Column(name = "FORNE_ATIVO")
+    private boolean forneativo;
 
     // Construtor vazio
     public Fornecedor() {}
@@ -35,97 +36,98 @@ public class Fornecedor {
     public Fornecedor(Long id, String razaoSocial, String nomeFantasia, String cnpj, String inscricaoEstadual,
                       String inscricaoMunicipal, String contatoResponsavel, LocalDate dataCadastro, String observacoes,
                       boolean ativo) {
-        this.id = id;
-        this.razaoSocial = razaoSocial;
-        this.nomeFantasia = nomeFantasia;
-        this.cnpj = cnpj;
-        this.inscricaoEstadual = inscricaoEstadual;
-        this.inscricaoMunicipal = inscricaoMunicipal;
-        this.contatoResponsavel = contatoResponsavel;
-        this.dataCadastro = dataCadastro;
-        this.observacoes = observacoes;
-        this.ativo = ativo;
+        this.forneid = id;
+        this.fornerazaoSocial = razaoSocial;
+        this.fornenomeFantasia = nomeFantasia;
+        this.fornecnpj = cnpj;
+        this.forneinscricaoEstadual = inscricaoEstadual;
+        this.forneinscricaoMunicipal = inscricaoMunicipal;
+        this.fornecontatoResponsavel = contatoResponsavel;
+        this.fornedataCadastro = dataCadastro;
+        this.forneobservacoes = observacoes;
+        this.forneativo = ativo;
     }
 
     // Getters e setters
 
-    public Long getId() {
-        return id;
+
+    public Long getForneid() {
+        return forneid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setForneid(Long forneid) {
+        this.forneid = forneid;
     }
 
-    public String getRazaoSocial() {
-        return razaoSocial;
+    public String getFornerazaoSocial() {
+        return fornerazaoSocial;
     }
 
-    public void setRazaoSocial(String razaoSocial) {
-        this.razaoSocial = razaoSocial;
+    public void setFornerazaoSocial(String fornerazaoSocial) {
+        this.fornerazaoSocial = fornerazaoSocial;
     }
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
+    public String getFornenomeFantasia() {
+        return fornenomeFantasia;
     }
 
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
+    public void setFornenomeFantasia(String fornenomeFantasia) {
+        this.fornenomeFantasia = fornenomeFantasia;
     }
 
-    public String getCnpj() {
-        return cnpj;
+    public String getFornecnpj() {
+        return fornecnpj;
     }
 
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+    public void setFornecnpj(String fornecnpj) {
+        this.fornecnpj = fornecnpj;
     }
 
-    public String getInscricaoEstadual() {
-        return inscricaoEstadual;
+    public String getForneinscricaoEstadual() {
+        return forneinscricaoEstadual;
     }
 
-    public void setInscricaoEstadual(String inscricaoEstadual) {
-        this.inscricaoEstadual = inscricaoEstadual;
+    public void setForneinscricaoEstadual(String forneinscricaoEstadual) {
+        this.forneinscricaoEstadual = forneinscricaoEstadual;
     }
 
-    public String getInscricaoMunicipal() {
-        return inscricaoMunicipal;
+    public String getForneinscricaoMunicipal() {
+        return forneinscricaoMunicipal;
     }
 
-    public void setInscricaoMunicipal(String inscricaoMunicipal) {
-        this.inscricaoMunicipal = inscricaoMunicipal;
+    public void setForneinscricaoMunicipal(String forneinscricaoMunicipal) {
+        this.forneinscricaoMunicipal = forneinscricaoMunicipal;
     }
 
-    public String getContatoResponsavel() {
-        return contatoResponsavel;
+    public String getFornecontatoResponsavel() {
+        return fornecontatoResponsavel;
     }
 
-    public void setContatoResponsavel(String contatoResponsavel) {
-        this.contatoResponsavel = contatoResponsavel;
+    public void setFornecontatoResponsavel(String fornecontatoResponsavel) {
+        this.fornecontatoResponsavel = fornecontatoResponsavel;
     }
 
-    public LocalDate getDataCadastro() {
-        return dataCadastro;
+    public LocalDate getFornedataCadastro() {
+        return fornedataCadastro;
     }
 
-    public void setDataCadastro(LocalDate dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setFornedataCadastro(LocalDate fornedataCadastro) {
+        this.fornedataCadastro = fornedataCadastro;
     }
 
-    public String getObservacoes() {
-        return observacoes;
+    public String getForneobservacoes() {
+        return forneobservacoes;
     }
 
-    public void setObservacoes(String observacoes) {
-        this.observacoes = observacoes;
+    public void setForneobservacoes(String forneobservacoes) {
+        this.forneobservacoes = forneobservacoes;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isForneativo() {
+        return forneativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setForneativo(boolean forneativo) {
+        this.forneativo = forneativo;
     }
 }

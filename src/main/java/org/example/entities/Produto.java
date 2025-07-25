@@ -10,54 +10,55 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "PRO_ID")
+    private Long proid;
+    @Column(name = "PRO_NOME", length = 100, nullable = false)
+    private String pronome;
+    @Column(name = "PRO_DESCRICAO", length = 255)
+    private String prodescricao;
 
-    private String nome;
+    @Column(name = "PRO_CODIGO_BARRAS", length = 50, unique = true)
+    private String procodigoBarras;
+    @Column(name = "PRO_REFERENCIA", length = 50)
+    private String proreferencia;
 
-    private String descricao;
+    @Column(name = "PRO_UNIDADE_MEDIDA", length = 5)
+    private String prounidadeMedida; // ex: UN, KG, L
+    @Column(name = "PRO_MARCA", length = 50)
+    private String promarca;
+    @Column(name = "PRO_CATEGORIA", length = 50)
+    private String procategoria;
+    @Column(name = "PRO_PRECO_CUSTO", precision = 10, scale = 2)
+    private BigDecimal proprecoCusto;
+    @Column(name = "PRO_PRECO_VENDA", precision = 10, scale = 2)
 
-    @Column(name = "codigo_barras")
-    private String codigoBarras;
+    private BigDecimal proprecoVenda;
 
-    private String referencia;
+    @Column(name = "PRO_ESTOQUE_ATUAL")
+    private Integer proestoqueAtual;
 
-    @Column(name = "unidade_medida", length = 5)
-    private String unidadeMedida; // ex: UN, KG, L
+    @Column(name = "PRO_ESTOQUE_MINIMO")
+    private Integer proestoqueMinimo;
 
-    private String marca;
+    @Column(name = "PRO_ESTOQUE_MAXIMO")
+    private Integer proestoqueMaximo;
+    @Column(name = "PRO_LOCALIZACAO", length = 50)
+    private String prolocalizacao; // ex: prateleira A1
 
-    private String categoria;
-
-    @Column(name = "preco_custo")
-    private BigDecimal precoCusto;
-
-    @Column(name = "preco_venda")
-    private BigDecimal precoVenda;
-
-    @Column(name = "estoque_atual")
-    private Integer estoqueAtual;
-
-    @Column(name = "estoque_minimo")
-    private Integer estoqueMinimo;
-
-    @Column(name = "estoque_maximo")
-    private Integer estoqueMaximo;
-
-    private String localizacao; // ex: prateleira A1
-
-    @Column(name = "data_validade")
-    private LocalDate dataValidade;
+    @Column(name = "PRO_DATA_VALIDADE")
+    private LocalDate prodataValidade;
 
     @ManyToOne
-    @JoinColumn(name = "fornecedor_id")
-    private Fornecedor fornecedor;
+    @JoinColumn(name = "FORNECEDOR_ID")
+    private Fornecedor profornecedor;
+    @Column(name = "PRO_ATIVO")
+    private boolean proativo;
 
-    private boolean ativo;
+    @Column(name = "PRO_DATA_CADASTRO")
+    private LocalDate prodataCadastro;
 
-    @Column(name = "data_cadastro")
-    private LocalDate dataCadastro;
-
-    private String observacoes;
+    @Column(name = "PRO_OBSERVACOES", columnDefinition = "TEXT")
+    private String proobservacoes;
 
     public Produto() {}
 
@@ -65,176 +66,176 @@ public class Produto {
                    String marca, String categoria, BigDecimal precoCusto, BigDecimal precoVenda, Integer estoqueAtual,
                    Integer estoqueMinimo, Integer estoqueMaximo, String localizacao, LocalDate dataValidade,
                    Fornecedor fornecedor, boolean ativo, LocalDate dataCadastro, String observacoes) {
-        this.id = id;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.codigoBarras = codigoBarras;
-        this.referencia = referencia;
-        this.unidadeMedida = unidadeMedida;
-        this.marca = marca;
-        this.categoria = categoria;
-        this.precoCusto = precoCusto;
-        this.precoVenda = precoVenda;
-        this.estoqueAtual = estoqueAtual;
-        this.estoqueMinimo = estoqueMinimo;
-        this.estoqueMaximo = estoqueMaximo;
-        this.localizacao = localizacao;
-        this.dataValidade = dataValidade;
-        this.fornecedor = fornecedor;
-        this.ativo = ativo;
-        this.dataCadastro = dataCadastro;
-        this.observacoes = observacoes;
+        this.proid = id;
+        this.pronome = nome;
+        this.prodescricao = descricao;
+        this.procodigoBarras = codigoBarras;
+        this.proreferencia = referencia;
+        this.prounidadeMedida = unidadeMedida;
+        this.promarca = marca;
+        this.procategoria = categoria;
+        this.proprecoCusto = precoCusto;
+        this.proprecoVenda = precoVenda;
+        this.proestoqueAtual = estoqueAtual;
+        this.proestoqueMinimo = estoqueMinimo;
+        this.proestoqueMaximo = estoqueMaximo;
+        this.prolocalizacao = localizacao;
+        this.prodataValidade = dataValidade;
+        this.profornecedor = fornecedor;
+        this.proativo = ativo;
+        this.prodataCadastro = dataCadastro;
+        this.proobservacoes = observacoes;
     }
 
-    public Long getId() {
-        return id;
+    public Long getProid() {
+        return proid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProid(Long proid) {
+        this.proid = proid;
     }
 
-    public String getNome() {
-        return nome;
+    public String getPronome() {
+        return pronome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setPronome(String pronome) {
+        this.pronome = pronome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getProdescricao() {
+        return prodescricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setProdescricao(String prodescricao) {
+        this.prodescricao = prodescricao;
     }
 
-    public String getCodigoBarras() {
-        return codigoBarras;
+    public String getProcodigoBarras() {
+        return procodigoBarras;
     }
 
-    public void setCodigoBarras(String codigoBarras) {
-        this.codigoBarras = codigoBarras;
+    public void setProcodigoBarras(String procodigoBarras) {
+        this.procodigoBarras = procodigoBarras;
     }
 
-    public String getReferencia() {
-        return referencia;
+    public String getProreferencia() {
+        return proreferencia;
     }
 
-    public void setReferencia(String referencia) {
-        this.referencia = referencia;
+    public void setProreferencia(String proreferencia) {
+        this.proreferencia = proreferencia;
     }
 
-    public String getUnidadeMedida() {
-        return unidadeMedida;
+    public String getProunidadeMedida() {
+        return prounidadeMedida;
     }
 
-    public void setUnidadeMedida(String unidadeMedida) {
-        this.unidadeMedida = unidadeMedida;
+    public void setProunidadeMedida(String prounidadeMedida) {
+        this.prounidadeMedida = prounidadeMedida;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getPromarca() {
+        return promarca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setPromarca(String promarca) {
+        this.promarca = promarca;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getProcategoria() {
+        return procategoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setProcategoria(String procategoria) {
+        this.procategoria = procategoria;
     }
 
-    public BigDecimal getPrecoCusto() {
-        return precoCusto;
+    public BigDecimal getProprecoCusto() {
+        return proprecoCusto;
     }
 
-    public void setPrecoCusto(BigDecimal precoCusto) {
-        this.precoCusto = precoCusto;
+    public void setProprecoCusto(BigDecimal proprecoCusto) {
+        this.proprecoCusto = proprecoCusto;
     }
 
-    public BigDecimal getPrecoVenda() {
-        return precoVenda;
+    public BigDecimal getProprecoVenda() {
+        return proprecoVenda;
     }
 
-    public void setPrecoVenda(BigDecimal precoVenda) {
-        this.precoVenda = precoVenda;
+    public void setProprecoVenda(BigDecimal proprecoVenda) {
+        this.proprecoVenda = proprecoVenda;
     }
 
-    public Integer getEstoqueAtual() {
-        return estoqueAtual;
+    public Integer getProestoqueAtual() {
+        return proestoqueAtual;
     }
 
-    public void setEstoqueAtual(Integer estoqueAtual) {
-        this.estoqueAtual = estoqueAtual;
+    public void setProestoqueAtual(Integer proestoqueAtual) {
+        this.proestoqueAtual = proestoqueAtual;
     }
 
-    public Integer getEstoqueMinimo() {
-        return estoqueMinimo;
+    public Integer getProestoqueMinimo() {
+        return proestoqueMinimo;
     }
 
-    public void setEstoqueMinimo(Integer estoqueMinimo) {
-        this.estoqueMinimo = estoqueMinimo;
+    public void setProestoqueMinimo(Integer proestoqueMinimo) {
+        this.proestoqueMinimo = proestoqueMinimo;
     }
 
-    public Integer getEstoqueMaximo() {
-        return estoqueMaximo;
+    public Integer getProestoqueMaximo() {
+        return proestoqueMaximo;
     }
 
-    public void setEstoqueMaximo(Integer estoqueMaximo) {
-        this.estoqueMaximo = estoqueMaximo;
+    public void setProestoqueMaximo(Integer proestoqueMaximo) {
+        this.proestoqueMaximo = proestoqueMaximo;
     }
 
-    public String getLocalizacao() {
-        return localizacao;
+    public String getProlocalizacao() {
+        return prolocalizacao;
     }
 
-    public void setLocalizacao(String localizacao) {
-        this.localizacao = localizacao;
+    public void setProlocalizacao(String prolocalizacao) {
+        this.prolocalizacao = prolocalizacao;
     }
 
-    public LocalDate getDataValidade() {
-        return dataValidade;
+    public LocalDate getProdataValidade() {
+        return prodataValidade;
     }
 
-    public void setDataValidade(LocalDate dataValidade) {
-        this.dataValidade = dataValidade;
+    public void setProdataValidade(LocalDate prodataValidade) {
+        this.prodataValidade = prodataValidade;
     }
 
-    public Fornecedor getFornecedor() {
-        return fornecedor;
+    public Fornecedor getProfornecedor() {
+        return profornecedor;
     }
 
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
+    public void setProfornecedor(Fornecedor profornecedor) {
+        this.profornecedor = profornecedor;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isProativo() {
+        return proativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setProativo(boolean proativo) {
+        this.proativo = proativo;
     }
 
-    public LocalDate getDataCadastro() {
-        return dataCadastro;
+    public LocalDate getProdataCadastro() {
+        return prodataCadastro;
     }
 
-    public void setDataCadastro(LocalDate dataCadastro) {
-        this.dataCadastro = dataCadastro;
+    public void setProdataCadastro(LocalDate prodataCadastro) {
+        this.prodataCadastro = prodataCadastro;
     }
 
-    public String getObservacoes() {
-        return observacoes;
+    public String getProobservacoes() {
+        return proobservacoes;
     }
 
-    public void setObservacoes(String observacoes) {
-        this.observacoes = observacoes;
+    public void setProobservacoes(String proobservacoes) {
+        this.proobservacoes = proobservacoes;
     }
 }
