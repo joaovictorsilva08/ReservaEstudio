@@ -28,9 +28,9 @@ public class Produto {
     private String promarca;
     @Column(name = "PRO_CATEGORIA", length = 50)
     private String procategoria;
-    @Column(name = "PRO_PRECO_CUSTO", precision = 10, scale = 2)
+    @Column(name = "PRO_PRECO_CUSTO")
     private BigDecimal proprecoCusto;
-    @Column(name = "PRO_PRECO_VENDA", precision = 10, scale = 2)
+    @Column(name = "PRO_PRECO_VENDA")
 
     private BigDecimal proprecoVenda;
 

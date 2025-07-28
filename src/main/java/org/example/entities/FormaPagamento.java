@@ -19,7 +19,7 @@ public class FormaPagamento {
     private Integer formdiasEntreParcelas;
     @Column(name = "FORM_PERMITE_TROCO")
     private boolean formpermiteTroco;
-    @Column(name = "FORM_TAXA_PERCENTUAL", precision = 5, scale = 2)
+    @Column(name = "FORM_TAXA_PERCENTUAL")
     private Double formtaxaPercentual;
     @Column(name = "FORM_ATIVO")
     private boolean formativo;

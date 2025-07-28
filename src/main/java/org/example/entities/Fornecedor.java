@@ -24,7 +24,7 @@ public class Fornecedor {
     private String fornecontatoResponsavel;
     @Column(name = "FORNE_DATA_CADASTRO")
     private LocalDate fornedataCadastro;
-    @Column(name = "FORNE_OBSERVACOES", columnDefinition = "TEXT")
+    @Column(name = "FORNE_OBSERVACOES")
     private String forneobservacoes;
     @Column(name = "FORNE_ATIVO")
     private boolean forneativo;

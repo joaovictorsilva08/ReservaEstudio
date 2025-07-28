@@ -2,6 +2,7 @@ package org.example.entities;
 
 
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
@@ -11,7 +12,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CLI_ID")
     private Long cliid;
-@Column(name = "CLI_NOME", length = 100, nullable = false )
+    @Column(name = "CLI_NOME", length = 100, nullable = false)
     private String clinome;
     @Column(name = "CLI_CPF", length = 14, unique = true)
     private String clicpf;
@@ -25,7 +26,7 @@ public class Cliente {
     @Column(name = "CLI_DATA_CADASTRO")
     private LocalDate clidataCadastro;
 
-    @Column(name = "CLI_OBSERVACOES", columnDefinition = "TEXT")
+    @Column(name = "CLI_OBSERVACOES")
     private String cliobservacoes;
     @Column(name = "CLI_ATIVO")
     private boolean cliativo;

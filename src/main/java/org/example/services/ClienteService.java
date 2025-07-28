@@ -30,7 +30,7 @@ public class ClienteService {
     public Cliente atualizar(Long id, Cliente cliente) {
         return clienteRepository.findById(id)
                 .map(clienteExistente -> {
-                    cliente.setId(id);
+                    cliente.setCliid(id);
                     return clienteRepository.save(cliente);
                 }).orElseThrow(() -> new ResourceNotFoundException("Cliente não encontrado com id " + id));
     }
