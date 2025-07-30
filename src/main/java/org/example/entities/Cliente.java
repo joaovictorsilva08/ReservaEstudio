@@ -11,7 +11,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CLI_ID")
-    private Long cliid;
+    private Long Cliid;
     @Column(name = "CLI_NOME", length = 100, nullable = false)
     private String clinome;
     @Column(name = "CLI_CPF", length = 14, unique = true)
@@ -35,7 +35,7 @@ public class Cliente {
 
 
     public Cliente(Long id, String nome, String cpf, String rg, LocalDate dataNascimento, String sexo, LocalDate dataCadastro, String observacoes, boolean ativo) {
-        this.cliid = id;
+        this.Cliid = id;
         this.clinome = nome;
         this.clicpf = cpf;
         this.clirg = rg;
@@ -47,15 +47,14 @@ public class Cliente {
     }
 
     public Long getCliid() {
-        return cliid;
+        return Cliid;
     }
 
     public void setCliid(Long cliid) {
-        this.cliid = cliid;
+        this.Cliid = Cliid;
     }
 
-    public String getClinome() {
-        return clinome;
+    public String getClinome() {return clinome;
     }
 
     public void setClinome(String clinome) {
