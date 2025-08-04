@@ -1,72 +1,110 @@
 package org.example.DTO;
+import jakarta.persistence.*;
 
+import java.time.LocalDate;
 public class ClienteDTO {
-    private long Cliid;
-    private String nome;
-    private String cpf;
-    private String rua;
-    private String cep;
-    private String numero;
-    private String endereco;
+
+    @Column(name = "CLI_ID")
+    private Long Cliid;
+
+    @Column(name = "CLI_NOME", length = 100, nullable = false)
+    private String clinome;
+
+    @Column(name = "CLI_CPF", length = 14, unique = true)
+    private String clicpf;
+
+    @Column(name = "CLI_RG", length = 20)
+    private String clirg;
+
+    @Column(name = "CLI_DATA_NASCIMENTO")
+    private LocalDate clidataNascimento;
+
+    @Column(name = "CLI_SEXO", length = 1)
+    private String clisexo;
+
+    @Column(name = "CLI_DATA_CADASTRO")
+    private LocalDate clidataCadastro;
+
+    @Column(name = "CLI_OBSERVACOES")
+    private String cliobservacoes;
+
+    @Column(name = "CLI_ATIVO")
+    private boolean cliativo;
 
     public ClienteDTO() {
     }
 
-    public long getCliid() {
+    // Getters e Setters
+
+    public Long getCliid() {
         return Cliid;
     }
 
-    public void setCliid(long cliid) {
-        Cliid = cliid;
+    public void setCliid(Long cliid) {
+        this.Cliid = cliid;
     }
 
-    public String getNome() {
-        return nome;
+    public String getClinome() {
+        return clinome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setClinome(String clinome) {
+        this.clinome = clinome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getClicpf() {
+        return clicpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setClicpf(String clicpf) {
+        this.clicpf = clicpf;
     }
 
-    public String getRua() {
-        return rua;
+    public String getClirg() {
+        return clirg;
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
+    public void setClirg(String clirg) {
+        this.clirg = clirg;
     }
 
-    public String getCep() {
-        return cep;
+    public LocalDate getClidataNascimento() {
+        return clidataNascimento;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    public void setClidataNascimento(LocalDate clidataNascimento) {
+        this.clidataNascimento = clidataNascimento;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getClisexo() {
+        return clisexo;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setClisexo(String clisexo) {
+        this.clisexo = clisexo;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public LocalDate getClidataCadastro() {
+        return clidataCadastro;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setClidataCadastro(LocalDate clidataCadastro) {
+        this.clidataCadastro = clidataCadastro;
     }
 
+    public String getCliobservacoes() {
+        return cliobservacoes;
+    }
 
+    public void setCliobservacoes(String cliobservacoes) {
+        this.cliobservacoes = cliobservacoes;
+    }
+
+    public boolean isCliativo() {
+        return cliativo;
+    }
+
+    public void setCliativo(boolean cliativo) {
+        this.cliativo = cliativo;
+    }
 }
