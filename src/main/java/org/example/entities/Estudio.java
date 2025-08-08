@@ -27,6 +27,9 @@ private Long estid;
     @Column(name = "EST_ATIVO")
     private boolean estatvo;
 
+    public Estudio() {
+    }
+
     public Estudio(Long estid, String estnome, String estcnpj, String estendereco, String esttelefone, String estemail, boolean estatvo) {
         this.estid = estid;
         this.estnome = estnome;

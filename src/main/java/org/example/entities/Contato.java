@@ -1,55 +1,38 @@
 package org.example.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Contato {
+
     @Id
+    @Column(name = "CON_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String telefone;
-    private String celular;
-    private String email;
+    private Long conId;
 
-    public Contato(Long id, String telefone, String celular, String email) {
-        this.id = id;
-        this.telefone = telefone;
-        this.celular = celular;
-        this.email = email;
-    }
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "CON_CLI_ID")
+    private Cliente conCliente;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "CON_CELULAR", length = 15)
+    private String conCelular;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "CON_TELEFONE_COMERCIAL", length = 15)
+    private String conTelefoneComercial;
 
-    public String getTelefone() {
-        return telefone;
-    }
+    @Column(length = 55, name = "CON_EMAIL")
+    private String conEmail;
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
 
 

@@ -1,36 +1,56 @@
 package org.example.services;
 
+import org.example.dto.EstudioDTO;
 import org.example.entities.Estudio;
+import org.example.mapper.EstudioMapper;
 import org.example.repositories.EstudioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Collectors;
+
 @Service
 public class EstudioService {
+
     @Autowired
     private EstudioRepository estudioRepository;
 
-    public List<Estudio> listarTodos() {
-        return estudioRepository.findAll();
+    // Retorna lista de DTOs
+    public List<EstudioDTO> listarTodos() {
+        List<Estudio> estudios = estudioRepository.findAll();
+        return estudios.stream()
+                .map(EstudioMapper::toDTO)
+                .collect(Collectors.toList());
     }
 
-    public Optional<Estudio> buscarPorId(Long id) {
-        return estudioRepository.findById(id);
+    // Retorna um DTO pelo id (ou lança exceção se quiser)
+    public EstudioDTO buscarPorId(Long id) {
+        Estudio estudio = estudioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Estudio não encontrado com id " + id));
+        return EstudioMapper.toDTO(estudio);
     }
 
-    public Estudio criar(Estudio estudio) {
-        return estudioRepository.save(estudio);
+    // Cria e retorna o DTO salvo
+    public EstudioDTO criar(EstudioDTO estudioDTO) {
+        Estudio estudio = EstudioMapper.toEntity(estudioDTO);
+        estudio = estudioRepository.save(estudio);
+        return EstudioMapper.toDTO(estudio);
     }
 
-    public Optional<Estudio> atualizar(Long id, Estudio estudioAtualizado) {
-        return estudioRepository.findById(id).map(estudioExistente -> {
-            estudioAtualizado.setEstid(id);
-            return estudioRepository.save(estudioAtualizado);
-        });
+    // Atualiza e retorna o DTO atualizado
+    public EstudioDTO atualizar(Long id, EstudioDTO estudioDTO) {
+        Estudio estudioExistente = estudioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Estudio não encontrado com id " + id));
+
+        Estudio estudioAtualizado = EstudioMapper.toEntity(estudioDTO);
+        estudioAtualizado.setEstid(id); // garante que o id permaneça o mesmo
+
+        estudioAtualizado = estudioRepository.save(estudioAtualizado);
+        return EstudioMapper.toDTO(estudioAtualizado);
     }
 
+    // Deleta e retorna true se deletou, false se não encontrou
     public boolean deletar(Long id) {
         return estudioRepository.findById(id).map(estudio -> {
             estudioRepository.delete(estudio);
@@ -38,4 +58,5 @@ public class EstudioService {
         }).orElse(false);
     }
 }
+
 

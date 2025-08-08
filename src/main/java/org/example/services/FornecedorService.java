@@ -1,7 +1,7 @@
 package org.example.services;
 
 import org.example.entities.Fornecedor;
-import org.example.exceptions.ResourceNotFoundException;
+import org.example.services.exeptions.ResourceNotFoundException;
 import org.example.repositories.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

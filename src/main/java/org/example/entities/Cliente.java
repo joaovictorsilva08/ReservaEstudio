@@ -2,118 +2,64 @@ package org.example.entities;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CLI_ID")
-    private Long Cliid;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cliId;
+
+    @OneToMany(mappedBy = "endCliente", cascade = CascadeType.ALL)
+    private List<Endereco> enderecos = new ArrayList<>();
+
+    @OneToMany(mappedBy = "conCliente", cascade = CascadeType.ALL)
+    private List<Contato> contatos = new ArrayList<>();
+
     @Column(name = "CLI_NOME", length = 100, nullable = false)
-    private String clinome;
+    private String cliNome;
+
     @Column(name = "CLI_CPF", length = 14, unique = true)
-    private String clicpf;
+    private String cliCpf;
+
     @Column(name = "CLI_RG", length = 20)
-    private String clirg;
+    private String cliRg;
+
     @Column(name = "CLI_DATA_NASCIMENTO")
-    private LocalDate clidataNascimento;
+    private Date cliDataNascimento;
 
     @Column(name = "CLI_SEXO", length = 1)
-    private String clisexo;
+    private String cliSexo;
+
     @Column(name = "CLI_DATA_CADASTRO")
-    private LocalDate clidataCadastro;
+    private Date cliDataCadastro;
 
     @Column(name = "CLI_OBSERVACOES")
-    private String cliobservacoes;
+    private String cliObservacoes;
+
     @Column(name = "CLI_ATIVO")
-    private boolean cliativo;
+    private String cliAtivo;
 
-    // Getters e setters
-
-
-    public Cliente(Long id, String nome, String cpf, String rg, LocalDate dataNascimento, String sexo, LocalDate dataCadastro, String observacoes, boolean ativo) {
-        this.Cliid = id;
-        this.clinome = nome;
-        this.clicpf = cpf;
-        this.clirg = rg;
-        this.clidataNascimento = dataNascimento;
-        this.clisexo = sexo;
-        this.clidataCadastro = dataCadastro;
-        this.cliobservacoes = observacoes;
-        this.cliativo = ativo;
-    }
-
-    public Long getCliid() {
-        return Cliid;
-    }
-
-    public void setCliid(Long cliid) {
-        this.Cliid = Cliid;
-    }
-
-    public String getClinome() {return clinome;
-    }
-
-    public void setClinome(String clinome) {
-        this.clinome = clinome;
-    }
-
-    public String getClicpf() {
-        return clicpf;
-    }
-
-    public void setClicpf(String clicpf) {
-        this.clicpf = clicpf;
-    }
-
-    public String getClirg() {
-        return clirg;
-    }
-
-    public void setClirg(String clirg) {
-        this.clirg = clirg;
-    }
-
-    public LocalDate getClidataNascimento() {
-        return clidataNascimento;
-    }
-
-    public void setClidataNascimento(LocalDate clidataNascimento) {
-        this.clidataNascimento = clidataNascimento;
-    }
-
-    public String getClisexo() {
-        return clisexo;
-    }
-
-    public void setClisexo(String clisexo) {
-        this.clisexo = clisexo;
-    }
-
-    public LocalDate getClidataCadastro() {
-        return clidataCadastro;
-    }
-
-    public void setClidataCadastro(LocalDate clidataCadastro) {
-        this.clidataCadastro = clidataCadastro;
-    }
-
-    public String getCliobservacoes() {
-        return cliobservacoes;
-    }
-
-    public void setCliobservacoes(String cliobservacoes) {
-        this.cliobservacoes = cliobservacoes;
-    }
-
-    public boolean isCliativo() {
-        return cliativo;
-    }
-
-    public void setCliativo(boolean cliativo) {
-        this.cliativo = cliativo;
+    public Cliente(Long cliId, String cliNome, String cliCpf, String cliRg, Date cliDataNascimento, String cliSexo, Date cliDataCadastro, String cliObservacoes, String cliAtivo) {
+        this.cliId = cliId;
+        this.cliNome = cliNome;
+        this.cliCpf = cliCpf;
+        this.cliRg = cliRg;
+        this.cliDataNascimento = cliDataNascimento;
+        this.cliSexo = cliSexo;
+        this.cliDataCadastro = cliDataCadastro;
+        this.cliObservacoes = cliObservacoes;
+        this.cliAtivo = cliAtivo;
     }
 }

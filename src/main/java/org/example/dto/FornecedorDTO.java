@@ -1,4 +1,4 @@
-package org.example.DTO;
+package org.example.dto;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;

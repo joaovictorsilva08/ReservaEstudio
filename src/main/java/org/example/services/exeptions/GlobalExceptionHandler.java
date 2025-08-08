@@ -1,4 +1,4 @@
-package org.example.exceptions;
+package org.example.services.exeptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +22,4 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 
-    // Você pode adicionar mais tratamentos para outras exceções aqui
 }

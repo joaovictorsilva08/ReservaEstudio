@@ -1,7 +1,7 @@
-package org.example.DTO;
+package org.example.dto;
 
 import jakarta.persistence.Column;
-import org.example.entities.Estudio;
+
 public class EstudioDTO {
 
     @Column(name = "EST_ID")
