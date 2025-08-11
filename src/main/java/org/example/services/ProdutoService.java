@@ -30,7 +30,7 @@ public class ProdutoService {
     public Produto atualizar(Long id, Produto produto) {
         return produtoRepository.findById(id)
                 .map(produtoExistente -> {
-                    produto.setProid(id);
+                    produto.setProId(id);
                     return produtoRepository.save(produto);
                 }).orElseThrow(() -> new ResourceNotFoundException("Produto não encontrado com id " + id));
     }

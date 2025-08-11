@@ -27,7 +27,7 @@ public class ProprietarioService {
    public Proprietario atualizar(Long id, Proprietario proprietario) {
       return proprietarioRepository.findById(id)
               .map(proprietarioExistente -> {
-                 proprietario.setPropid(id);
+                 proprietario.setPropId(id);
                  return proprietarioRepository.save(proprietario);
               })
               .orElseThrow(() -> new ResourceNotFoundException("Proprietario não encontrado com id " + id));

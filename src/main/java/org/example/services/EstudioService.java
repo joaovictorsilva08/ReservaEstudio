@@ -44,7 +44,7 @@ public class EstudioService {
                 .orElseThrow(() -> new RuntimeException("Estudio não encontrado com id " + id));
 
         Estudio estudioAtualizado = EstudioMapper.toEntity(estudioDTO);
-        estudioAtualizado.setEstid(id); // garante que o id permaneça o mesmo
+        estudioAtualizado.setEstId(id); // garante que o id permaneça o mesmo
 
         estudioAtualizado = estudioRepository.save(estudioAtualizado);
         return EstudioMapper.toDTO(estudioAtualizado);

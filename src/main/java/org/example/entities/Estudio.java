@@ -1,98 +1,49 @@
 package org.example.entities;
 import jakarta.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "ESTUDIO")
-public class Estudio {@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "EST_ID")
-private Long estid;
+public class Estudio {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "EST_ID")
+    private Long estId;
 
     @Column(name = "EST_NOME", length = 100, nullable = false)
-    private String estnome;
+    private String estNome;
 
     @Column(name = "EST_CNPJ", length = 18, unique = true)
-    private String estcnpj;
+    private String estCnpj;
 
     @Column(name = "EST_ENDERECO", length = 255)
-    private String estendereco;
+    private String estEndereco;
 
     @Column(name = "EST_TELEFONE", length = 20)
-    private String esttelefone;
+    private String estTelefone;
 
     @Column(name = "EST_EMAIL", length = 100)
-    private String estemail;
+    private String estEmail;
 
     @Column(name = "EST_ATIVO")
-    private boolean estatvo;
+    private boolean estAtivo;
 
-    public Estudio() {
-    }
-
-    public Estudio(Long estid, String estnome, String estcnpj, String estendereco, String esttelefone, String estemail, boolean estatvo) {
-        this.estid = estid;
-        this.estnome = estnome;
-        this.estcnpj = estcnpj;
-        this.estendereco = estendereco;
-        this.esttelefone = esttelefone;
-        this.estemail = estemail;
-        this.estatvo = estatvo;
-    }
-
-    public Long getEstid() {
-        return estid;
-    }
-
-    public void setEstid(Long estid) {
-        this.estid = estid;
-    }
-
-    public String getEstnome() {
-        return estnome;
-    }
-
-    public void setEstnome(String estnome) {
-        this.estnome = estnome;
-    }
-
-    public String getEstcnpj() {
-        return estcnpj;
-    }
-
-    public void setEstcnpj(String estcnpj) {
-        this.estcnpj = estcnpj;
-    }
-
-    public String getEstendereco() {
-        return estendereco;
-    }
-
-    public void setEstendereco(String estendereco) {
-        this.estendereco = estendereco;
-    }
-
-    public String getEsttelefone() {
-        return esttelefone;
-    }
-
-    public void setEsttelefone(String esttelefone) {
-        this.esttelefone = esttelefone;
-    }
-
-    public String getEstemail() {
-        return estemail;
-    }
-
-    public void setEstemail(String estemail) {
-        this.estemail = estemail;
-    }
-
-    public boolean isEstatvo() {
-        return estatvo;
-    }
-
-    public void setEstatvo(boolean estatvo) {
-        this.estatvo = estatvo;
+    public Estudio(Long estId, String estNome, String estCnpj, String estEndereco, String estTelefone, String estEmail, boolean estAtivo) {
+        this.estId = estId;
+        this.estNome = estNome;
+        this.estCnpj = estCnpj;
+        this.estEndereco = estEndereco;
+        this.estTelefone = estTelefone;
+        this.estEmail = estEmail;
+        this.estAtivo = estAtivo;
     }
 }
+

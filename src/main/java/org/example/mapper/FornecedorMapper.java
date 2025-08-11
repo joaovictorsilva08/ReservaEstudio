@@ -9,16 +9,16 @@ public class FornecedorMapper {
         if (fornecedor == null) return null;
 
         FornecedorDTO dto = new FornecedorDTO();
-        dto.setForneid(fornecedor.getForneid());
-        dto.setFornerazaoSocial(fornecedor.getFornerazaoSocial());
-        dto.setFornenomeFantasia(fornecedor.getFornenomeFantasia());
-        dto.setFornecnpj(fornecedor.getFornecnpj());
-        dto.setForneinscricaoEstadual(fornecedor.getForneinscricaoEstadual());
-        dto.setForneinscricaoMunicipal(fornecedor.getForneinscricaoMunicipal());
-        dto.setFornecontatoResponsavel(fornecedor.getFornecontatoResponsavel());
-        dto.setFornedataCadastro(fornecedor.getFornedataCadastro());
-        dto.setForneobservacoes(fornecedor.getForneobservacoes());
-        dto.setForneativo(fornecedor.isForneativo());
+        dto.setForneId(fornecedor.getForneId());
+        dto.setForneRazaoSocial(fornecedor.getForneRazaoSocial());
+        dto.setForneNomeFantasia(fornecedor.getForneNomeFantasia());
+        dto.setForneCnpj(fornecedor.getForneCnpj());
+        dto.setForneInscricaoEstadual(fornecedor.getForneInscricaoEstadual());
+        dto.setForneInscricaoMunicipal(fornecedor.getForneInscricaoMunicipal());
+        dto.setForneContatoResponsavel(fornecedor.getForneContatoResponsavel());
+        dto.setForneDataCadastro(fornecedor.getForneDataCadastro());
+        dto.setForneObservacoes(fornecedor.getForneObservacoes());
+        dto.setForneAtivo(fornecedor.isForneAtivo());
 
         return dto;
     }
@@ -27,16 +27,16 @@ public class FornecedorMapper {
         if (dto == null) return null;
 
         Fornecedor fornecedor = new Fornecedor();
-        fornecedor.setForneid(dto.getForneid());
-        fornecedor.setFornerazaoSocial(dto.getFornerazaoSocial());
-        fornecedor.setFornenomeFantasia(dto.getFornenomeFantasia());
-        fornecedor.setFornecnpj(dto.getFornecnpj());
-        fornecedor.setForneinscricaoEstadual(dto.getForneinscricaoEstadual());
-        fornecedor.setForneinscricaoMunicipal(dto.getForneinscricaoMunicipal());
-        fornecedor.setFornecontatoResponsavel(dto.getFornecontatoResponsavel());
-        fornecedor.setFornedataCadastro(dto.getFornedataCadastro());
-        fornecedor.setForneobservacoes(dto.getForneobservacoes());
-        fornecedor.setForneativo(dto.isForneativo());
+        fornecedor.setForneId(dto.getForneId());
+        fornecedor.setForneRazaoSocial(dto.getForneRazaoSocial());
+        fornecedor.setForneNomeFantasia(dto.getForneNomeFantasia());
+        fornecedor.setForneCnpj(dto.getForneCnpj());
+        fornecedor.setForneInscricaoEstadual(dto.getForneInscricaoEstadual());
+        fornecedor.setForneInscricaoMunicipal(dto.getForneInscricaoMunicipal());
+        fornecedor.setForneContatoResponsavel(dto.getForneContatoResponsavel());
+        fornecedor.setForneDataCadastro(dto.getForneDataCadastro());
+        fornecedor.setForneObservacoes(dto.getForneObservacoes());
+        fornecedor.setForneAtivo(dto.isForneAtivo());
 
         return fornecedor;
     }

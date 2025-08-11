@@ -35,7 +35,7 @@ public class ProprietarioController {
     public ResponseEntity<Proprietario> atualizar(@PathVariable Long id, @RequestBody Proprietario proprietario) {
         return proprietarioRepository.findById(id)
                 .map(proprietarioExistente -> {
-                    proprietario.setPropid(id);
+                    proprietario.setPropId(id);
                     Proprietario atualizado = proprietarioRepository.save(proprietario);
                     return ResponseEntity.ok(atualizado);
                 })

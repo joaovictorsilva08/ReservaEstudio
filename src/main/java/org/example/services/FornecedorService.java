@@ -30,7 +30,7 @@ public class FornecedorService {
     public Fornecedor atualizar(Long id, Fornecedor fornecedor) {
         return fornecedorRepository.findById(id)
                 .map(fornecedorExistente -> {
-                    fornecedor.setForneid(id);
+                    fornecedor.setForneId(id);
                     return fornecedorRepository.save(fornecedor);
                 }).orElseThrow(() -> new ResourceNotFoundException("Fornecedor não encontrado com id " + id));
     }

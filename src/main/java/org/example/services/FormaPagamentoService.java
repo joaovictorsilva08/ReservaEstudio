@@ -30,7 +30,7 @@ public class FormaPagamentoService {
     public FormaPagamento atualizar(Long id, FormaPagamento formaPagamento) {
         return formaPagamentoRepository.findById(id)
                 .map(fpExistente -> {
-                    formaPagamento.setFormid(id);
+                    formaPagamento.setFormId(id);
                     return formaPagamentoRepository.save(formaPagamento);
                 }).orElseThrow(() -> new ResourceNotFoundException("Forma de pagamento não encontrada com id " + id));
     }

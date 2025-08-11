@@ -36,7 +36,7 @@ public class FormaPagamentoController {
     public ResponseEntity<FormaPagamento> atualizar(@PathVariable Long id, @RequestBody FormaPagamento formaPagamento) {
         return formaPagamentoRepository.findById(id)
                 .map(fpExistente -> {
-                    formaPagamento.setFormid(id);
+                    formaPagamento.setFormId(id);
                     FormaPagamento atualizado = formaPagamentoRepository.save(formaPagamento);
                     return ResponseEntity.ok(atualizado);
                 })

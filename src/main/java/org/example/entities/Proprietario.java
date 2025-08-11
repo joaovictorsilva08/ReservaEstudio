@@ -1,94 +1,48 @@
 package org.example.entities;
 import jakarta.persistence.*;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "PROPRIETARIO")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Proprietario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PROP_ID")
-    private Long propid;
+    private Long propId;
 
     @Column(name = "PROP_NOME", length = 100, nullable = false)
-    private String propnome;
+    private String propNome;
 
     @Column(name = "PROP_CPF", length = 14, unique = true, nullable = false)
-    private String propcpf;
+    private String propCpf;
 
     @Column(name = "PROP_RG", length = 20)
-    private String proprg;
+    private String propRg;
 
     @Column(name = "PROP_TELEFONE", length = 20)
-    private String proptelefone;
+    private String propTelefone;
 
     @Column(name = "PROP_EMAIL", length = 100)
-    private String propemail;
+    private String propEmail;
 
     @Column(name = "PROP_ATIVO")
-    private boolean propativo;
+    private boolean propAtivo;
 
-    public Proprietario(Long propid, String propnome, String propcpf, String proprg, String proptelefone, String propemail, boolean propativo) {
-        this.propid = propid;
-        this.propnome = propnome;
-        this.propcpf = propcpf;
-        this.proprg = proprg;
-        this.proptelefone = proptelefone;
-        this.propemail = propemail;
-        this.propativo = propativo;
-    }
-
-    public Long getPropid() {
-        return propid;
-    }
-
-    public void setPropid(Long propid) {
-        this.propid = propid;
-    }
-
-    public String getPropnome() {
-        return propnome;
-    }
-
-    public void setPropnome(String propnome) {
-        this.propnome = propnome;
-    }
-
-    public String getPropcpf() {
-        return propcpf;
-    }
-
-    public void setPropcpf(String propcpf) {
-        this.propcpf = propcpf;
-    }
-
-    public String getProprg() {
-        return proprg;
-    }
-
-    public void setProprg(String proprg) {
-        this.proprg = proprg;
-    }
-
-    public String getProptelefone() {
-        return proptelefone;
-    }
-
-    public void setProptelefone(String proptelefone) {
-        this.proptelefone = proptelefone;
-    }
-
-    public String getPropemail() {
-        return propemail;
-    }
-
-    public void setPropemail(String propemail) {
-        this.propemail = propemail;
-    }
-
-    public boolean isPropativo() {
-        return propativo;
-    }
-
-    public void setPropativo(boolean propativo) {
-        this.propativo = propativo;
+    public Proprietario(Long propId, String propNome, String propCpf, String propRg, String propTelefone,
+                        String propEmail, boolean propAtivo) {
+        this.propId = propId;
+        this.propNome = propNome;
+        this.propCpf = propCpf;
+        this.propRg = propRg;
+        this.propTelefone = propTelefone;
+        this.propEmail = propEmail;
+        this.propAtivo = propAtivo;
     }
 }

@@ -5,27 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fad0e2c-3a12-475f-b4d2-b14f4520d4c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/ClienteMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/EstudioMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/FornecedorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/repositories/EnderecoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/exeptions/DataIntegrityViolationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/exeptions/ValueBigForAtributeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTO/ClienteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/ClienteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTO/EstudioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/EstudioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTO/FornecedorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/FornecedorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Contato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Contato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dto/EstudioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/EstudioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dto/FornecedorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/FornecedorDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Estudio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Estudio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/exeptions/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exceptions/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/exeptions/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repositories/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repositories/ClienteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/resources/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/FormaPagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/FormaPagamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Fornecedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Proprietario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mapper/ClienteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/ClienteMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mapper/EstudioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/EstudioMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/mapper/FornecedorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/mapper/FornecedorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/resources/EstudioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/EstudioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/resources/FormaPagamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/FormaPagamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/resources/FornecedorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/FornecedorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/resources/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/resources/ProprietarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/resources/ProprietarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/EstudioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/EstudioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/FormaPagamentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/FormaPagamentoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/FornecedorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/FornecedorService.java" afterDir="false" />
@@ -51,9 +46,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="30HkrCfEMTKyrMf6cOnmE2rYENV" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -69,6 +64,7 @@
     "Maven.ProjetoAutoPecas [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",

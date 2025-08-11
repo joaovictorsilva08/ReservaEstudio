@@ -35,7 +35,7 @@ public class EstudioController {
     public ResponseEntity<Estudio> atualizar(@PathVariable Long id, @RequestBody Estudio estudio) {
         return estudioRepository.findById(id)
                 .map(eExistente -> {
-                    estudio.setEstid(id);
+                    estudio.setEstId(id);
                     Estudio atualizado = estudioRepository.save(estudio);
                     return ResponseEntity.ok(atualizado);
                 })

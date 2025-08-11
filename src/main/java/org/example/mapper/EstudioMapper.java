@@ -10,13 +10,13 @@ public class EstudioMapper {
         if (estudio == null) return null;
 
         EstudioDTO dto = new EstudioDTO();
-        dto.setEstid(estudio.getEstid());
-        dto.setEstnome(estudio.getEstnome());
-        dto.setEstcnpj(estudio.getEstcnpj());
-        dto.setEstendereco(estudio.getEstendereco());
-        dto.setEsttelefone(estudio.getEsttelefone());
-        dto.setEstemail(estudio.getEstemail());
-        dto.setEstatvo(estudio.isEstatvo());
+        dto.setEstId(estudio.getEstId());
+        dto.setEstNome(estudio.getEstNome());
+        dto.setEstCnpj(estudio.getEstCnpj());
+        dto.setEstEndereco(estudio.getEstEndereco());
+        dto.setEstTelefone(estudio.getEstTelefone());
+        dto.setEstEmail(estudio.getEstEmail());
+        dto.setEstAtivo(estudio.isEstAtivo());
 
         return dto;
     }
@@ -26,13 +26,13 @@ public class EstudioMapper {
 
 
         Estudio estudio = new Estudio();
-        estudio.setEstid(dto.getEstid());
-        estudio.setEstnome(dto.getEstnome());
-        estudio.setEstcnpj(dto.getEstcnpj());
-        estudio.setEstendereco(dto.getEstendereco());
-        estudio.setEsttelefone(dto.getEsttelefone());
-        estudio.setEstemail(dto.getEstemail());
-        estudio.setEstatvo(dto.isEstatvo());
+        estudio.setEstId(dto.getEstId());
+        estudio.setEstNome(dto.getEstNome());
+        estudio. setEstCnpj(dto.getEstCnpj());
+        estudio.setEstEndereco(dto.getEstEndereco());
+        estudio.setEstTelefone(dto.getEstTelefone());
+        estudio.setEstEmail(dto.getEstEmail());
+        estudio.setEstAtivo(dto.isEstAtivo());
 
         return estudio;
     }
