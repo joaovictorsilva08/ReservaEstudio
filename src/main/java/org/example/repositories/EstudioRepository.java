@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 public interface EstudioRepository extends JpaRepository<Estudio, Long> {
 
     // Busca por nome
-    Estudio findByEstnome(String estnome);
+    Estudio findByEstNome(String estNome);
 
     // Verifica se já existe CNPJ cadastrado
-    boolean existsByEstcnpj(String estcnpj);
+    boolean existsByEstCnpj(String estCnpj);
 }

@@ -1,6 +1,7 @@
 package org.example.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,6 +22,11 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PRO_ID")
     private Long proId;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "END_FORNE_ID")
+    private Fornecedor endFornecedor;
 
     @Column(name = "PRO_NOME", length = 100, nullable = false)
     private String proNome;
