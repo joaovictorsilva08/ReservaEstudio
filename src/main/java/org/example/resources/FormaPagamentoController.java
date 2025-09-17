@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("formas-pagamento")
+@RequestMapping("formapagamentos")
 public class FormaPagamentoController {
 
     @Autowired

@@ -3,11 +3,13 @@ package org.example.resources;
 import org.example.entities.Produto;
 import org.example.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("produtos")
 public class ProdutoController {
@@ -26,10 +28,15 @@ public class ProdutoController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-
     @PostMapping
-    public Produto criar(@RequestBody Produto produto) {
-        return produtoRepository.save(produto);
+    public ResponseEntity<Produto> criar(@RequestBody Produto produto) {
+        try {
+            Produto salvo = produtoRepository.save(produto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
+        } catch (Exception e) {
+            e.printStackTrace(); // Mostra erro no console
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
     }
 
     @PutMapping("/{id}")
@@ -52,4 +59,5 @@ public class ProdutoController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
+
 }

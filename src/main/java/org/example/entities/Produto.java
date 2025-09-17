@@ -23,10 +23,7 @@ public class Produto {
     @Column(name = "PRO_ID")
     private Long proId;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "END_FORNE_ID")
-    private Fornecedor endFornecedor;
+
 
     @Column(name = "PRO_NOME", length = 100, nullable = false)
     private String proNome;
@@ -70,9 +67,7 @@ public class Produto {
     @Column(name = "PRO_DATA_VALIDADE")
     private LocalDate proDataValidade;
 
-    @ManyToOne
-    @JoinColumn(name = "FORNECEDOR_ID")
-    private Fornecedor proFornecedor;
+
 
     @Column(name = "PRO_ATIVO")
     private boolean proAtivo;
@@ -87,7 +82,7 @@ public class Produto {
                    String proUnidadeMedida, String proMarca, String proCategoria, BigDecimal proPrecoCusto,
                    BigDecimal proPrecoVenda, Integer proEstoqueAtual, Integer proEstoqueMinimo,
                    Integer proEstoqueMaximo, String proLocalizacao, LocalDate proDataValidade,
-                   Fornecedor proFornecedor, boolean proAtivo, LocalDate proDataCadastro, String proObservacoes) {
+                   boolean proAtivo, LocalDate proDataCadastro, String proObservacoes) {
         this.proId = proId;
         this.proNome = proNome;
         this.proDescricao = proDescricao;
@@ -103,7 +98,7 @@ public class Produto {
         this.proEstoqueMaximo = proEstoqueMaximo;
         this.proLocalizacao = proLocalizacao;
         this.proDataValidade = proDataValidade;
-        this.proFornecedor = proFornecedor;
+
         this.proAtivo = proAtivo;
         this.proDataCadastro = proDataCadastro;
         this.proObservacoes = proObservacoes;

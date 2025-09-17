@@ -39,6 +39,10 @@ public class FormaPagamento {
     @Column(name = "FORM_ATIVO")
     private boolean formAtivo;
 
+    @ManyToOne
+    @JoinColumn(name = "RES_ID")  // A chave estrangeira que faz a ligação com ReservaEstudios
+    private ReservaEstudios pagReserva;  // Nome que será referenciado no mappedBy
+
     public FormaPagamento(Long formId, String formDescricao, String formTipo,
                           Integer formNumeroParcelas, Integer formDiasEntreParcelas,
                           boolean formPermiteTroco, Double formTaxaPercentual, boolean formAtivo) {
@@ -52,4 +56,3 @@ public class FormaPagamento {
         this.formAtivo = formAtivo;
     }
 }
-

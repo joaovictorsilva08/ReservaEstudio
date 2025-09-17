@@ -51,7 +51,7 @@ public class ReservaEstudios {
     private String resObservacoes;
 
     public ReservaEstudios(Long resId, Cliente cliente, Estudio estudio, Date resData, Date resHoraInicio, Date resHoraFim,
-                          Double resValor, String resStatus, String resObservacoes) {
+                           Double resValor, String resStatus, String resObservacoes) {
         this.resId = resId;
         this.cliente = cliente;
         this.estudio = estudio;

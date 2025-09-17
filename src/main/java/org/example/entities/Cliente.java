@@ -45,7 +45,7 @@ public class Cliente {
     @Column(name = "CLI_DATA_NASCIMENTO")
     private Date cliDataNascimento;
 
-    @Column(name = "CLI_SEXO", length = 1)
+    @Column(name = "CLI_SEXO", length = 20)
     private String cliSexo;
 
     @Column(name = "CLI_DATA_CADASTRO")
